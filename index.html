@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Train Scheduler!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+    <div class="container">
+
+      <div class="jumbotron br-primary">
+        <h1 class="text-center"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Train Time!</h1>
+          <h4 class="text-center">Choo Choo.</h4>
+      </div>
+
+      <div class="panel panel-primary">
+
+          <div class="panel-heading"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><strong> Current Train Schedule</strong></div>
+
+          <div class="panel-body">
+            <p>Pick your Choo Choo below</p>
+          </div>
+
+          <table class="table table-hover" id="train-table">
+            <thead>
+              <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency (min)</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+
+      </div>
+
+      <div class="panel panel-primary">
+
+        <div class="panel-heading"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span><strong> Add Train</strong></div>
+
+        <div class="panel-body">
+
+            <div class="form-group">
+              <p><strong>Train Name</strong></p>
+              <input type="text" id="train-input" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <br>
+
+            <div class="form-group">
+              <p><strong>Destination</strong></p>
+              <input type="text" id="destination-input" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <br>
+
+            <div class="form-group">
+              <p><strong>First Train Time (HH:mm - military time)</strong></p>
+              <input type="text" id="firsttrain-input" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <br>
+
+            <div class="form-group">
+              <p><strong>Frequency (min)</strong></p>
+              <input type="text" id="frequency-input" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <br>
+
+            <button type="button" id="add-train-btn" class="btn btn-danger">Submit</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/af.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+  </body>
+</html>
