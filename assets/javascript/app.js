@@ -1,3 +1,4 @@
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyAA9VpP5La5ysc0JTlsMuZQVuWxvyGsoS4",
@@ -12,7 +13,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //BUtton for adding Train
-$("#add-train-btn").on("click", function(event) {
+$("#add-train-btn").on("click", function() {
   event.preventDefault();
 
   //Grabs user input
@@ -27,7 +28,6 @@ $("#add-train-btn").on("click", function(event) {
     destination: destName,
     firstTrain: firstTrainTime,
     frequency: freqTime,
-    timeStamp: firebase.database.ServerValue.TIMESTAMP
   };
 
   //Uploads train data to the database
@@ -47,6 +47,7 @@ $("#add-train-btn").on("click", function(event) {
   $("#destination-input").val("");
   $("#firsttrain-input").val("");
   $("#frequency-input").val("");
+
 });
 
 //Create Firebase event for adding train to the database and a row in the html when a user adds Train
@@ -114,11 +115,11 @@ database.ref().on("child_added", function(childSnapshot) {
   $("#currentTime").text(currentTime);
 
   $("#train-table").append(
-    "<tr><td>" + childSnapshot.val().train +
-    "<tr><td>" + childSnapshot.val().frequency +
-    "<tr><td>" + childSnapshot.val().destination +
-    "<tr><td>" + moment(nextTrain).format("HH:mm") +
-    "<tr><td>" + tMinutesTillTrain + "</td></tr>");
+    "<tr><td>" + childSnapshot.val().train + "</td>" +
+    "<td>" + childSnapshot.val().destination + "</td>" +
+    "<td>" + childSnapshot.val().frequency + "</td>" +
+    "<td>" + moment(nextTrain).format("HH:mm") + "</td>" +
+    "<td>" + tMinutesTillTrain + "</td></tr>");
 
 
 });
