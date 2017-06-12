@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>Train Scheduler!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script><script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
   </head>
   <body>
@@ -13,6 +16,7 @@
       <div class="jumbotron br-primary">
         <h1 class="text-center"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Train Time!</h1>
           <h4 class="text-center">Choo Choo.</h4>
+          <h6 id="currentTime" class="text-center"></h6>
       </div>
 
       <div class="panel panel-primary">
@@ -23,7 +27,7 @@
             <p>Pick your Choo Choo below</p>
           </div>
 
-          <table class="table table-hover" id="train-table">
+          <table class="table table-hover">
             <thead>
               <tr>
                 <th>Train Name</th>
@@ -33,7 +37,8 @@
                 <th>Minutes Away</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="train-table">
+              <tr></tr>
             </tbody>
           </table>
 
@@ -77,10 +82,6 @@
 
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/locale/af.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
 
   </body>
 </html>
