@@ -1,4 +1,5 @@
 
+
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyAA9VpP5La5ysc0JTlsMuZQVuWxvyGsoS4",
@@ -13,9 +14,9 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 //BUtton for adding Train
-$("#add-train-btn").on("click", function() {
+$("#add-train-btn").on("click", function(event) {
   event.preventDefault();
-
+  console.log("bus")
   //Grabs user input
   var trainName = $("#train-input").val().trim();
   var destName = $("#destination-input").val().trim();
